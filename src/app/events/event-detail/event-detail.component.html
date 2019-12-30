@@ -1,0 +1,19 @@
+<img [src]="'http://127.0.0.1:80/lab/image/event2.png'" style="max-height:150px;" class="col-md-offset-3 img-thumbnail">
+<hr>
+<h4 class="list-group-item-heading">{{event.title}} - <span style="color: rgb(0, 153, 255);">{{event.date | date:'fullDate'}} {{event.date | date:'shortTime'}}</span></h4>
+<!-- <p [innerText]="event.description"></p> -->
+<p class="list-group-item-heading">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Pellentesque fringilla lacus sit amet augue vulputate porttitor.
+  Nullam iaculis ipsum tempus, dignissim purus vitae, iaculis velit.
+  Cras dui lacus, mattis quis tellus quis, rutrum ullamcorper metus.
+</p>
+<div style="margin-top:20px;">
+  <a><i class="fa fa-users pull-right count"> 50</i></a>
+  <a><i class="fa fa-thumbs-o-up pull-right count icon-margin"> 10</i></a>
+  <a><i class="fa fa-thumbs-o-down pull-right count icon-margin"> 10</i></a>
+  <a><i class="fa fa-share pull-right count icon-margin"> share</i></a>
+  <button class="btn btn-success btn-sm pull-left">register</button>
+  <button [routerLink]="['edit']"class="btn btn-warning btn-sm pull-left" style="margin-left:10px;">edit</button>
+  <button class="btn btn-danger btn-sm pull-left"  style="margin-left:10px;">delet</button>
+</div>

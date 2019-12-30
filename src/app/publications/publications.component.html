@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <button class="btn btn-primary btn-sm" (click)="onAddPublication()">Add Publication</button>
+      </div>
+    </div>
+    <hr class="col-xs-12 col-md-6">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <app-publication-list [publications]="publications"></app-publication-list>
+        <nav aria-label="Page navigation" class="col-xs-12" style="text-align:center;">
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li><a href="#" [app-pagination]="req">1</a></li>
+            <li><a href="#" [app-pagination]="req">2</a></li>
+            <li><a href="#" [app-pagination]="req">3</a></li>
+            <li><a href="#" [app-pagination]="req">4</a></li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- switching partition -->
+      <div [ngSwitch]="switchValue" class="col-xs-12 col-md-5 col-md-offset-1">
+        <div *ngSwitchCase="1">
+          <app-publication-detail *ngIf="selectedPublication; else publication" [publication]="selectedPublication" ></app-publication-detail>
+          <ng-template #publication>
+            <p>
+              <img src ="http://127.0.0.1:80/lab/image/lab1.jpg"  class="img-thumbnail">
+            </p>
+            <h4 class="list-group-item-heading" style="text-align:center;">LAB NAME</h4>
+          </ng-template>
+        </div>
+        <div *ngSwitchCase="0">
+          <app-publication-edit></app-publication-edit>
+        </div>
+      </div>
+    </div>
+  </div>

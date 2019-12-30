@@ -1,0 +1,9 @@
+<a  (click)="onSelect()" class="list-group-item clearfix" style="cursor: pointer;">
+    <div class="pull-left">
+      <h4 class="list-group-item-heading">{{publication.title}} - <span style="color: rgb(0, 153, 255);">{{publication.date | date:'fullDate'}} {{publication.date | date:'shortTime'}}</span></h4>
+      <p class="list-group-item-text" [innerText]="publication.decription"></p>
+    </div>
+    <span class="pull-right">
+      <img [src]="'http://127.0.0.1:80/lab/image/event1.jpg'" [alt]="publication.title" class="img-responsive" style="max-height: 50px;">
+    </span>
+</a>
